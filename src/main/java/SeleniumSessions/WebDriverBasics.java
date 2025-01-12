@@ -18,18 +18,27 @@ public class WebDriverBasics {
             driver = new EdgeDriver();
         } else if (browserName.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
-        }else {
-            System.out.println("Please pass correct browser name: "+ browserName);
+        } else {
+            System.out.println("Please pass correct browser name: " + browserName);
         }
 
         driver.get("https://www.google.co.in/");
 
         String actTitle = driver.getTitle();
-        System.out.println("Actual title: "+actTitle);
+        System.out.println("Actual title: " + actTitle);
 
-        if(actTitle.equals("Google")){
+        String url = driver.getCurrentUrl();
+        System.out.println("Actual url: " + url);
+
+        if (actTitle.equals("Google")) {
             System.out.println("Pass");
-        }else {
+        } else {
+            System.out.println("Fail");
+        }
+
+        if (url.contains("google.co.in")) {
+            System.out.println("Pass");
+        } else {
             System.out.println("Fail");
         }
 
