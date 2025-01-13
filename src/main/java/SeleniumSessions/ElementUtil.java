@@ -12,6 +12,10 @@ public class ElementUtil {
         this.driver = driver;
     }
 
+    public void doClick(By locator) {
+        getElement(locator).click();
+    }
+
     public WebElement getElement(By locator) {
         return driver.findElement(locator);
     }
