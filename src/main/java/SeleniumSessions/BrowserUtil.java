@@ -5,6 +5,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.net.URL;
+
 public class BrowserUtil {
 
     WebDriver driver;
@@ -40,6 +42,10 @@ public class BrowserUtil {
             throw new BrowserException("http(s) is missing in URL");
         }
         driver.get(url);
+    }
+
+    public void launchUrl(URL url) {
+        driver.navigate().to(url);
     }
 
     public String getPageTitle() {
